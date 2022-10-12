@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\Task\StoreRequest;
+use App\Jobs\ProcessTask;
 use App\Models\Algorithm;
 use App\Models\Task;
 use Illuminate\Http\Request;
@@ -19,7 +20,8 @@ class TaskController extends Controller
 
     public function store(StoreRequest $storeRequest)
     {
-        $this->service->store($storeRequest);
+        $data = $storeRequest->validated();
+        $this->dispatch(new ProcessTask($data));
 
         return redirect()->route('index');
     }

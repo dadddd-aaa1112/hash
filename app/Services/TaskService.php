@@ -3,6 +3,7 @@
 namespace App\Services;
 
 use App\Models\Algorithm;
+use App\Models\Status;
 use App\Models\Task;
 
 class TaskService
@@ -24,7 +25,7 @@ class TaskService
     public function store($storeRequest)
     {
         $data = $storeRequest->validated();
-        $data['status_id'] = 1;
+        $data['status_id'] = Status::status('completed')->first()->id;
         $resString = $this->hashAlg($data);
         $data['convert_row'] = $resString;
         $task = Task::firstOrCreate(
