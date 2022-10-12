@@ -10,4 +10,9 @@ class Algorithm extends Model
     use HasFactory;
 
     protected $guarded = false;
+
+    public function scopeAlgorithm($query, $id)
+    {
+        return $query->where('id', $id);
+    }
 }

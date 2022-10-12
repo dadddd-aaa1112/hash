@@ -19,4 +19,6 @@ class Task extends Model
         return $this->belongsTo(Algorithm::class, 'algorithm_id', 'id');
     }
 
+
+
 }

@@ -9,7 +9,7 @@
    ])
 
    @include('components.input', [
-         'title' => 'Частота обновления',
+         'title' => 'Частота обновления (мс)',
          'fieldName' => 'update_freq',
            'type' => 'number',
          'placeholder' => 'Введите частоту обновления',

@@ -33,12 +33,36 @@ class AlgorithmSeeder extends Seeder
                 'sha1'
             ],
             [
-                'SHA-2',
-                'sha2'
+                'SHA-224',
+                'sha224'
             ],
             [
-                'SHA-3',
-                'sha3'
+                'SHA-256',
+                'sha256'
+            ],
+            [
+                'SHA-384',
+                'sha384'
+            ],
+            [
+                'SHA-512',
+                'sha512'
+            ],
+            [
+                'SHA-3-224',
+                'sha3-224'
+            ],
+            [
+                'SHA-3-256',
+                'sha3-256'
+            ],
+            [
+                'SHA-3-384',
+                'sha3-384'
+            ],
+            [
+                'SHA-3-512',
+                'sha3-512'
             ],
         ];
 

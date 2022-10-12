@@ -3,17 +3,17 @@
     {{ $i = 0; }}
 @endphp
 
-<table class="table mb-5">
+<table class="table table-striped mb-5 w-100">
     <thead>
     <tr>
         <th>№</th>
         <th>Исходная строка</th>
-        <th>Hash строки</th>
         <th>Частота обновления (мс)</th>
         <th>Количество повторений</th>
         <th>Соль</th>
         <th>Алгоритм хеширования</th>
         <th>Статус</th>
+        <th class="bg-success">Hash строки</th>
     </tr>
     </thead>
     <tbody>
@@ -22,11 +22,6 @@
         <tr>
             <td>{{++$i}}</td>
             <td>{{$task->orig_row}}</td>
-            <td>
-                @if(isset($task->convert_row))
-                    {{$task->convert_row}}
-                @endif
-            </td>
             <td>{{$task->update_freq}}</td>
             <td>{{$task->count_repet}}</td>
             <td>{{$task->salt}}</td>
@@ -38,6 +33,11 @@
             <td>
                 @if(isset($task->statuses->title))
                     {{$task->statuses->title}}
+                @endif
+            </td>
+            <td>
+                @if(isset($task->convert_row))
+                    {{$task->convert_row}}
                 @endif
             </td>
         </tr>

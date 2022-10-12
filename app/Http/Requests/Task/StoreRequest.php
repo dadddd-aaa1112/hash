@@ -25,7 +25,7 @@ class StoreRequest extends FormRequest
     {
         return [
             'orig_row' => 'required',
-            'update_freq' => 'required|numeric|min:0',
+            'update_freq' => 'required|numeric|min:0|max:300000',
             'count_repet' => 'required|numeric|min:0',
             'salt' => 'required',
             'algorithm_id' => 'numeric|not_in:0',
@@ -37,6 +37,7 @@ class StoreRequest extends FormRequest
         return [
             'count_repet.min' => 'Число должно быть больше или равно 0',
             'update_freq.min' => 'Число должно быть больше или равно 0',
+            'update_freq.max' => 'Число должно быть не больше 300 000',
             'orig_row.required' => 'Необходимо ввести значение',
             'update_freq.required' => 'Необходимо ввести значение',
             'count_repet.required' => 'Необходимо ввести значение',
