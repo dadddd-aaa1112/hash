@@ -1,5 +1,6 @@
-После клонирования репозитория и подключения к базе MySQL необходимо в терминале запустить команды:
+После клонирования репозитория и подключения к базе MySQL необходимо в терминале поочередно запустить команды:
 
-php artisan migrate
-php artisan db:seed
-php artisan queue:work
+1. php artisan serve
+2. php artisan migrate
+3. php artisan db:seed
+4. php artisan queue:work
