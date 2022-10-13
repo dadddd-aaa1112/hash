@@ -1,6 +1,6 @@
 <div class="col-md-12">
     <div class="form-group">
-        <div class="d-flex flex-row w-50">
+        <div class="d-flex flex-row">
             <label for="{{ $fieldName }}" class="col-md-3 col-form-label">{{ $title }}</label>
             <select name="{{ $fieldName }}" id="{{ $fieldName }}" class="form-control">
                 <option value="0">выбрать</option>

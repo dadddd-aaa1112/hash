@@ -16,7 +16,7 @@ class MainController extends Controller
         return view('main',
             [
                 'algorithms' => $algorithms,
-                'tasks' => $tasks
+                'tasks' => $tasks,
             ]);
     }
 }

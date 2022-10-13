@@ -21,7 +21,7 @@ class ProcessTask implements ShouldQueue
 
     protected $data;
 
-    public function __construct( $data)
+    public function __construct($data)
     {
 
         $this->data = $data;
@@ -42,8 +42,9 @@ class ProcessTask implements ShouldQueue
     public function handle()
     {
 
-        $this->data['status_id'] = Status::status('completed')->first()->id;;
+        $this->data['status_id'] = Status::status('completed')->first()->id;
         $hash = Algorithm::algorithm($this->data['algorithm_id'])->first()->code;
+
         $resString = hash($hash, $this->data['orig_row']);
 
         if ($this->data['count_repet'] >= 1) {

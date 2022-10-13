@@ -13,7 +13,7 @@
         <th>Соль</th>
         <th>Алгоритм хеширования</th>
         <th>Статус</th>
-        <th class="bg-success">Hash строки</th>
+        <th class="bg-info">Hash строки</th>
     </tr>
     </thead>
     <tbody>
@@ -30,16 +30,20 @@
                     {{$task->algorithms->title}}
                 @endif
             </td>
-            <td>
-                @if(isset($task->statuses->title))
+            @if(isset($task->statuses->title))
+                <td class="text-bg-success">
+            @else
+                <td>
+                    @endif
                     {{$task->statuses->title}}
-                @endif
-            </td>
-            <td>
-                @if(isset($task->convert_row))
-                    {{$task->convert_row}}
-                @endif
-            </td>
+
+                </td>
+
+                <td>
+                    @if(isset($task->convert_row))
+                        {{$task->convert_row}}
+                    @endif
+                </td>
         </tr>
     @endforeach
 

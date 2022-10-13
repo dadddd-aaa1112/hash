@@ -20,7 +20,13 @@ class TaskController extends Controller
 
     public function store(StoreRequest $storeRequest)
     {
-        $data = $storeRequest->validated();
+        $dataValidate = $storeRequest->validated();
+        $data = array();
+        foreach($dataValidate as $key=>$value){
+            $item = preg_replace("/[0-9]+/",'', $key);
+            $data[$item] = $value;
+        }
+
         $this->dispatch(new ProcessTask($data));
 
         return redirect()->route('index');
