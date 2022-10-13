@@ -23,31 +23,30 @@ class StoreRequest extends FormRequest
      */
     public function rules()
     {
-        for ($i = 0; $i <= 10; $i++) {
-            return [
-                'orig_row' . $i => 'required',
-                'update_freq' . $i => 'required|numeric|min:0|max:300000',
-                'count_repet' . $i => 'required|numeric|min:0',
-                'salt' . $i => 'required',
-                'algorithm_id' . $i => 'numeric|not_in:0',
+        $i = 0;
+        return [
+            'orig_row' . $i => 'required',
+            'update_freq' . $i => 'required|numeric|min:0|max:300000',
+            'count_repet' . $i => 'required|numeric|min:0',
+            'salt' . $i => 'required',
+            'algorithm_id' . $i => 'numeric|not_in:0',
 
-            ];
-        }
+        ];
     }
 
     public function messages()
     {
-        for ($i = 0; $i <= 10; $i++) {
-            return [
-                'count_repet' . $i . '.min' => 'Число должно быть больше или равно 0',
-                'update_freq' . $i . '.min' => 'Число должно быть больше или равно 0',
-                'update_freq' . $i . '.max' => 'Число должно быть не больше 300 000',
-                'orig_row' . $i . '.required' => 'Необходимо ввести значение',
-                'update_freq' . $i . '.required' => 'Необходимо ввести значение',
-                'count_repet' . $i . '.required' => 'Необходимо ввести значение',
-                'salt' . $i . '.required' => 'Необходимо ввести значение',
-                'algorithm_id' . $i . '.not_in' => 'Необходимо выбрать значение',
-            ];
-        }
+        $i = 0;
+        return [
+            'count_repet' . $i . '.min' => 'Число должно быть больше или равно 0',
+            'update_freq' . $i . '.min' => 'Число должно быть больше или равно 0',
+            'update_freq' . $i . '.max' => 'Число должно быть не больше 300 000',
+            'orig_row' . $i . '.required' => 'Необходимо ввести значение',
+            'update_freq' . $i . '.required' => 'Необходимо ввести значение',
+            'count_repet' . $i . '.required' => 'Необходимо ввести значение',
+            'salt' . $i . '.required' => 'Необходимо ввести значение',
+            'algorithm_id' . $i . '.not_in' => 'Необходимо выбрать значение',
+        ];
+
     }
 }

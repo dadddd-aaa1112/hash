@@ -19,3 +19,8 @@ Route::get('/welcome', function () {
 
 Route::get('/', [\App\Http\Controllers\MainController::class, 'index'])->name('index');
 Route::post('/', [\App\Http\Controllers\TaskController::class, 'store'])->name('task.store');
+
+Route::group(['prefix' => 'group'], function () {
+    Route::get('/', [\App\Http\Controllers\TaskController::class, 'redirectToGroup'])->name('group.redirect');
+    Route::post('/', [\App\Http\Controllers\TaskController::class, 'storeGroup'])->name('task.group.store');
+});
